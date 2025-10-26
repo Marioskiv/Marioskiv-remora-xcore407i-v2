@@ -1,4 +1,4 @@
-# 8-Axis Closed-Loop Configuration Guide
+# 6-Axis Closed-Loop Configuration Guide
 
 ## Περιγραφή (Description)
 

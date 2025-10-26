@@ -1,6 +1,6 @@
 {
   "Board": "XCORE407I",
-  "Comment": "8-Axis CLOSED-LOOP with Real-Time Position Monitoring - Ethernet Communication",
+  "Comment": "6-Axis CLOSED-LOOP with Real-Time Position Monitoring - Ethernet Communication",
   "Communication": "Ethernet",
   "IP": "10.10.10.10",
   "Netmask": "255.255.255.0",

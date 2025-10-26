@@ -1,4 +1,4 @@
-# Getting Started with 8-Axis Closed-Loop System
+# Getting Started with 6-Axis Closed-Loop System
 
 ## Quick Start Guide
 
@@ -10,10 +10,10 @@ This guide will help you get your XCORE407I board running with closed-loop motor
 
 Your XCORE407I Remora firmware now includes:
 
-✅ **8 Encoder Modules** - Quadrature position feedback  
-✅ **8 Endstop Modules** - Home and limit switches  
-✅ **8 Alarm Modules** - Motor error detection  
-✅ **8 Stepgen Modules** - Step/direction outputs  
+✅ **6 Encoder Modules** - Quadrature position feedback  
+✅ **6 Endstop Modules** - Home and limit switches  
+✅ **6 Alarm Modules** - Motor error detection  
+✅ **6 Stepgen Modules** - Step/direction outputs  
 ✅ **Complete Examples** - Ready-to-use configurations  
 
 ---
@@ -46,7 +46,7 @@ Pick the example that matches your machine:
 | **1-Axis Test** | Initial testing, single motor | `examples/config_1axis_test.json` |
 | **3-Axis Basic** | CNC mills, routers (X,Y,Z) | `examples/config_3axis_basic.json` |
 | **6-Axis** | Multi-axis machines, robots | `examples/config_6axis_with_index.json` |
-| **8-Axis Full** | Maximum capability | `examples/config_8axis_closed_loop.json` |
+| **6-Axis Full** | Maximum capability | `examples/config_6axis_closed_loop.json` |
 
 **Recommendation:** Start with `config_1axis_test.json` to verify everything works!
 

@@ -90,8 +90,8 @@ All configuration files are in JSON format and can be loaded via SD card or UART
   - Organized by axis with clear comments
   - Ready to use for most CNC applications
 
-- **[examples/config_8axis_closed_loop.json](examples/config_8axis_closed_loop.json)**
-  - 8-axis system (XYZABCUV)
+- **[examples/config_6axis_closed_loop.json](examples/config_6axis_closed_loop.json)**
+  - 6-axis system (XYZABC)
   - Extended configuration for complex machines
   - Robot arms, multi-head systems
 

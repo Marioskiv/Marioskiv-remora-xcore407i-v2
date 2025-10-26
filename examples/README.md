@@ -24,14 +24,14 @@ This directory contains example configuration files for different machine setups
   - 6x Alarm modules
 - Recommended for: Advanced multi-axis machines, robotic arms
 
-### 3. `config_8axis_closed_loop.json`
-**8-Axis Full Configuration (X, Y, Z, A, B, C, U, V)**
+### 3. `config_6axis_closed_loop.json`
+**6-Axis Full Configuration (X, Y, Z, A, B, C)**
 - Maximum axis configuration
 - Includes:
-  - 8x Stepgen modules
-  - 8x Encoder modules
-  - 8x Endstop modules
-  - 8x Alarm modules
+  - 6x Stepgen modules
+  - 6x Encoder modules
+  - 6x Endstop modules
+  - 6x Alarm modules
 - Recommended for: Complex machines, dual gantry systems, multi-spindle setups
 
 ## Module Types Explained

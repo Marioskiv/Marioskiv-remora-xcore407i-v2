@@ -1,4 +1,4 @@
-# Wiring Diagram - Differential Alarm Signals (A+/A-) για 8-Axis Servo System
+# Wiring Diagram - Differential Alarm Signals (A+/A-) για 6-Axis Servo System
 
 ## Πλήρης Συνδεσμολογία για 8 Closed-Loop Servos
 

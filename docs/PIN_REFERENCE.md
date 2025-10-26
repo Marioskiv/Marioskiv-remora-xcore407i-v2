@@ -490,7 +490,7 @@ Pin 7:  PC_4  - Axis 4 Alarm
 
 ```
 
-**Note**: This pin assignment is a suggestion. You can modify it in `config_8axis_closed_loop.json` to match your actual hardware layout.
+**Note**: This pin assignment is a suggestion. You can modify it in `config_6axis_closed_loop.json` to match your actual hardware layout.
 
 ---
 
