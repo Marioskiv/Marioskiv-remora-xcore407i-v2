@@ -1,13 +1,13 @@
 
-# PlatformIO
+# PlatformIO - Build artifacts (NOT in repo)
 .pio/
 .pioenvs/
 .piodebug/
+libdeps/
 
-# Build output
+# Build output (NOT in repo)
 build/
 *.elf
-*.bin
 *.hex
 *.map
 *.o
@@ -15,19 +15,27 @@ build/
 *.a
 *.log
 
-# VSCode
+# VSCode settings (NOT in repo)
 .vscode/
 
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Python
 __pycache__/
 *.pyc
+*.pyo
 
-# Misc
+# Backup/temp files
 *.swp
 *.swo
 *.bak
 *.tmp
+*.old
+*~
+
+# Keep firmware binaries in repo (for easy download)
+!firmware/*.bin
+!firmware/*.elf
