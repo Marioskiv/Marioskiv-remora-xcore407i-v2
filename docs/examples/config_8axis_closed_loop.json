@@ -1,0 +1,317 @@
+{
+  "Board": "XCORE407I",
+  "Comment": "8-Axis Closed-Loop Configuration with Encoders, Endstops and Alarms",
+  "Modules": [
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 0 - X Axis Step Generator",
+      "Joint Number": 0,
+      "Enable Pin": "PE_3",
+      "Step Pin": "PE_4",
+      "Direction Pin": "PE_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 0 - X Axis Encoder Feedback",
+      "Joint Number": 0,
+      "Channel A Pin": "PD_0",
+      "Channel B Pin": "PD_1"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 0 - X Axis Endstop/Limit",
+      "Pin": "PA_0",
+      "Data Bit": 0,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 0 - X Axis Motor Alarm",
+      "Joint Number": 0,
+      "Pin": "PC_0",
+      "Data Bit": 8,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 1 - Y Axis Step Generator",
+      "Joint Number": 1,
+      "Enable Pin": "PE_6",
+      "Step Pin": "PE_0",
+      "Direction Pin": "PE_1",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 1 - Y Axis Encoder Feedback",
+      "Joint Number": 1,
+      "Channel A Pin": "PD_2",
+      "Channel B Pin": "PD_3"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 1 - Y Axis Endstop/Limit",
+      "Pin": "PA_1",
+      "Data Bit": 1,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 1 - Y Axis Motor Alarm",
+      "Joint Number": 1,
+      "Pin": "PC_1",
+      "Data Bit": 9,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 2 - Z Axis Step Generator",
+      "Joint Number": 2,
+      "Enable Pin": "PB_9",
+      "Step Pin": "PB_4",
+      "Direction Pin": "PB_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 2 - Z Axis Encoder Feedback",
+      "Joint Number": 2,
+      "Channel A Pin": "PD_4",
+      "Channel B Pin": "PD_5"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 2 - Z Axis Endstop/Limit",
+      "Pin": "PA_2",
+      "Data Bit": 2,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 2 - Z Axis Motor Alarm",
+      "Joint Number": 2,
+      "Pin": "PC_2",
+      "Data Bit": 10,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 3 - A Axis Step Generator",
+      "Joint Number": 3,
+      "Enable Pin": "PB_8",
+      "Step Pin": "PD_12",
+      "Direction Pin": "PD_13",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 3 - A Axis Encoder Feedback",
+      "Joint Number": 3,
+      "Channel A Pin": "PD_6",
+      "Channel B Pin": "PD_7"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 3 - A Axis Endstop/Limit",
+      "Pin": "PA_3",
+      "Data Bit": 3,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 3 - A Axis Motor Alarm",
+      "Joint Number": 3,
+      "Pin": "PC_3",
+      "Data Bit": 11,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 4 - B Axis Step Generator",
+      "Joint Number": 4,
+      "Enable Pin": "PD_9",
+      "Step Pin": "PD_14",
+      "Direction Pin": "PD_15",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 4 - B Axis Encoder Feedback",
+      "Joint Number": 4,
+      "Channel A Pin": "PE_7",
+      "Channel B Pin": "PE_8"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 4 - B Axis Endstop/Limit",
+      "Pin": "PA_4",
+      "Data Bit": 4,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 4 - B Axis Motor Alarm",
+      "Joint Number": 4,
+      "Pin": "PC_4",
+      "Data Bit": 12,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 5 - C Axis Step Generator",
+      "Joint Number": 5,
+      "Enable Pin": "PD_10",
+      "Step Pin": "PG_2",
+      "Direction Pin": "PG_3",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 5 - C Axis Encoder Feedback",
+      "Joint Number": 5,
+      "Channel A Pin": "PE_9",
+      "Channel B Pin": "PE_10"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 5 - C Axis Endstop/Limit",
+      "Pin": "PA_5",
+      "Data Bit": 5,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 5 - C Axis Motor Alarm",
+      "Joint Number": 5,
+      "Pin": "PC_5",
+      "Data Bit": 13,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 6 - U Axis Step Generator",
+      "Joint Number": 6,
+      "Enable Pin": "PG_4",
+      "Step Pin": "PG_5",
+      "Direction Pin": "PG_6",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 6 - U Axis Encoder Feedback",
+      "Joint Number": 6,
+      "Channel A Pin": "PE_11",
+      "Channel B Pin": "PE_12"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 6 - U Axis Endstop/Limit",
+      "Pin": "PA_6",
+      "Data Bit": 6,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 6 - U Axis Motor Alarm",
+      "Joint Number": 6,
+      "Pin": "PC_6",
+      "Data Bit": 14,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 7 - V Axis Step Generator",
+      "Joint Number": 7,
+      "Enable Pin": "PG_7",
+      "Step Pin": "PG_8",
+      "Direction Pin": "PG_9",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 7 - V Axis Encoder Feedback",
+      "Joint Number": 7,
+      "Channel A Pin": "PE_13",
+      "Channel B Pin": "PE_14"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 7 - V Axis Endstop/Limit",
+      "Pin": "PA_7",
+      "Data Bit": 7,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 7 - V Axis Motor Alarm",
+      "Joint Number": 7,
+      "Pin": "PC_7",
+      "Data Bit": 15,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Servo",
+      "Type": "Blink",
+      "Comment": "Status LED",
+      "Pin": "PE_2",
+      "Frequency": 2
+    }
+  ]
+}

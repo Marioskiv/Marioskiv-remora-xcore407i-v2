@@ -1,0 +1,51 @@
+{
+  "Board": "XCORE407I",
+  "Comment": "Single Axis Test Configuration - For initial testing and verification",
+  "Modules": [
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Test Axis - Step Generator",
+      "Joint Number": 0,
+      "Enable Pin": "PE_3",
+      "Step Pin": "PE_4",
+      "Direction Pin": "PE_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Test Axis - Encoder Feedback with Index",
+      "Joint Number": 0,
+      "Channel A Pin": "PD_0",
+      "Channel B Pin": "PD_1",
+      "Index Pin": "PD_8"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Test Axis - Home/Limit Switch",
+      "Pin": "PA_0",
+      "Data Bit": 0,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Test Axis - Motor Alarm Input",
+      "Joint Number": 0,
+      "Pin": "PC_0",
+      "Data Bit": 8,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Blink",
+      "Comment": "Status LED - Indicates firmware is running",
+      "Pin": "PE_2",
+      "Frequency": 2
+    }
+  ]
+}

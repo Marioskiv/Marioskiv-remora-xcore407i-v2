@@ -1,0 +1,23 @@
+#ifndef MODULE_LIST_H
+#define MODULE_LIST_H
+
+// Include All modules
+#include "module.h"
+#include "alarm/alarm.h"
+#include "blink/blink.h"
+#include "comms/commsHandler.h"
+#include "debug/debug.h"
+#include "digitalPin/digitalPin.h"
+#include "encoder/encoder.h"
+#include "endstop/endstop.h"
+//#include "motorPower/motorPower.h"
+#include "positionMonitor/positionMonitor.h"
+#include "resetPin/resetPin.h"
+#include "sigmaDelta/sigmaDelta.h"
+#include "stepgen/stepgen.h"
+#include "temperature/temperature.h"
+#include "tmc/tmc.h"
+
+#include "moduleInterrupt.h"
+
+#endif

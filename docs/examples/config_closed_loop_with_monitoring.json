@@ -1,0 +1,167 @@
+{
+  "Board": "XCORE407I",
+  "Comment": "8-Axis CLOSED-LOOP with Real-Time Position Monitoring - Ethernet Communication",
+  "Communication": "Ethernet",
+  "IP": "10.10.10.10",
+  "Netmask": "255.255.255.0",
+  "Gateway": "10.10.10.1",
+  "Modules": [
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 0 - X Axis Step Generator (writes to jointStepCount)",
+      "ThreadFreq": 40000,
+      "Joint Number": 0,
+      "Enable Pin": "PE_3",
+      "Step Pin": "PE_4",
+      "Direction Pin": "PE_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 0 - X Axis Encoder Feedback (writes to jointFeedback)",
+      "Joint Number": 0,
+      "Channel A Pin": "PD_0",
+      "Channel B Pin": "PD_1"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "Joint 0 - Real-Time Position Error Detection",
+      "Joint Number": 0,
+      "Steps Per Unit": 80.0,
+      "Counts Per Unit": 100.0,
+      "Error Threshold": 2.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 0
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 0 - X Axis Endstop",
+      "Pin": "PA_0",
+      "Data Bit": 0,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 0 - X Axis Motor Alarm",
+      "Joint Number": 0,
+      "Pin": "PC_0",
+      "Data Bit": 16,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 1 - Y Axis Step Generator",
+      "ThreadFreq": 40000,
+      "Joint Number": 1,
+      "Enable Pin": "PE_6",
+      "Step Pin": "PE_0",
+      "Direction Pin": "PE_1",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 1 - Y Axis Encoder Feedback",
+      "Joint Number": 1,
+      "Channel A Pin": "PD_2",
+      "Channel B Pin": "PD_3"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "Joint 1 - Real-Time Position Error Detection",
+      "Joint Number": 1,
+      "Steps Per Unit": 80.0,
+      "Counts Per Unit": 100.0,
+      "Error Threshold": 2.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 1
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 1 - Y Axis Endstop",
+      "Pin": "PA_1",
+      "Data Bit": 1,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 1 - Y Axis Motor Alarm",
+      "Joint Number": 1,
+      "Pin": "PC_1",
+      "Data Bit": 17,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 2 - Z Axis Step Generator",
+      "ThreadFreq": 40000,
+      "Joint Number": 2,
+      "Enable Pin": "PB_9",
+      "Step Pin": "PB_4",
+      "Direction Pin": "PB_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Joint 2 - Z Axis Encoder Feedback",
+      "Joint Number": 2,
+      "Channel A Pin": "PD_4",
+      "Channel B Pin": "PD_5"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "Joint 2 - Real-Time Position Error Detection",
+      "Joint Number": 2,
+      "Steps Per Unit": 400.0,
+      "Counts Per Unit": 500.0,
+      "Error Threshold": 1.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 2
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Joint 2 - Z Axis Endstop",
+      "Pin": "PA_2",
+      "Data Bit": 2,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Joint 2 - Z Axis Motor Alarm",
+      "Joint Number": 2,
+      "Pin": "PC_2",
+      "Data Bit": 18,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Thread": "Servo",
+      "Type": "Blink",
+      "Comment": "Status LED - Heartbeat",
+      "Pin": "PE_2",
+      "Frequency": 2
+    }
+  ]
+}

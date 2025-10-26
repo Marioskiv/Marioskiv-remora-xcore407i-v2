@@ -1,0 +1,353 @@
+{
+  "Board": "XCORE407I",
+  "Comment": "6-Axis Closed-Loop System (XYZABC) - Full Featured Configuration",
+  "Communication": "Ethernet",
+  "IP": "10.10.10.10",
+  "Netmask": "255.255.255.0",
+  "Gateway": "10.10.10.1",
+  "Modules": [
+    
+    {
+      "Comment": "═══════════════════════════════════════════════════════════",
+      "Comment2": "  JOINT 0 - X AXIS (Linear - Primary horizontal movement)",
+      "Comment3": "═══════════════════════════════════════════════════════════"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "X-Axis Step Generator (writes commanded position to jointStepCount[0])",
+      "ThreadFreq": 40000,
+      "Joint Number": 0,
+      "Enable Pin": "PE_3",
+      "Step Pin": "PE_4",
+      "Direction Pin": "PE_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "X-Axis Encoder Feedback (writes actual position to jointFeedback[0])",
+      "Joint Number": 0,
+      "Channel A Pin": "PD_0",
+      "Channel B Pin": "PD_1"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "X-Axis Position Error Detection (compares stepCount vs encoder)",
+      "Joint Number": 0,
+      "Steps Per Unit": 80.0,
+      "Counts Per Unit": 100.0,
+      "Error Threshold": 2.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 0
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "X-Axis Limit Switch",
+      "Pin": "PA_0",
+      "Data Bit": 0,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "X-Axis Servo Driver Alarm (A+/A- differential, A+ to +3.3V, A- to PC_0)",
+      "Joint Number": 0,
+      "Pin": "PC_0",
+      "Data Bit": 16,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Comment": "═══════════════════════════════════════════════════════════",
+      "Comment2": "  JOINT 1 - Y AXIS (Linear - Secondary horizontal movement)",
+      "Comment3": "═══════════════════════════════════════════════════════════"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Y-Axis Step Generator",
+      "ThreadFreq": 40000,
+      "Joint Number": 1,
+      "Enable Pin": "PE_6",
+      "Step Pin": "PE_0",
+      "Direction Pin": "PE_1",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Y-Axis Encoder Feedback",
+      "Joint Number": 1,
+      "Channel A Pin": "PD_2",
+      "Channel B Pin": "PD_3"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "Y-Axis Position Error Detection",
+      "Joint Number": 1,
+      "Steps Per Unit": 80.0,
+      "Counts Per Unit": 100.0,
+      "Error Threshold": 2.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 1
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Y-Axis Limit Switch",
+      "Pin": "PA_1",
+      "Data Bit": 1,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Y-Axis Servo Driver Alarm (A- to PC_1)",
+      "Joint Number": 1,
+      "Pin": "PC_1",
+      "Data Bit": 17,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Comment": "═══════════════════════════════════════════════════════════",
+      "Comment2": "  JOINT 2 - Z AXIS (Linear - Vertical movement)",
+      "Comment3": "═══════════════════════════════════════════════════════════"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Z-Axis Step Generator (typically higher resolution)",
+      "ThreadFreq": 40000,
+      "Joint Number": 2,
+      "Enable Pin": "PB_9",
+      "Step Pin": "PB_4",
+      "Direction Pin": "PB_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "Z-Axis Encoder Feedback",
+      "Joint Number": 2,
+      "Channel A Pin": "PD_4",
+      "Channel B Pin": "PD_5"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "Z-Axis Position Error Detection (tighter tolerance)",
+      "Joint Number": 2,
+      "Steps Per Unit": 400.0,
+      "Counts Per Unit": 500.0,
+      "Error Threshold": 1.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 2
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "Z-Axis Limit Switch",
+      "Pin": "PA_2",
+      "Data Bit": 2,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "Z-Axis Servo Driver Alarm (A- to PC_2)",
+      "Joint Number": 2,
+      "Pin": "PC_2",
+      "Data Bit": 18,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Comment": "═══════════════════════════════════════════════════════════",
+      "Comment2": "  JOINT 3 - A AXIS (Rotary - around X axis)",
+      "Comment3": "═══════════════════════════════════════════════════════════"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "A-Axis Step Generator (rotary, degrees)",
+      "ThreadFreq": 40000,
+      "Joint Number": 3,
+      "Enable Pin": "PB_8",
+      "Step Pin": "PB_6",
+      "Direction Pin": "PB_7",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "A-Axis Encoder Feedback",
+      "Joint Number": 3,
+      "Channel A Pin": "PD_6",
+      "Channel B Pin": "PD_7"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "A-Axis Position Error Detection (degrees)",
+      "Joint Number": 3,
+      "Steps Per Unit": 88.88888889,
+      "Counts Per Unit": 111.111111,
+      "Error Threshold": 2.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 3
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "A-Axis Limit Switch (optional for rotary)",
+      "Pin": "PA_3",
+      "Data Bit": 3,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "A-Axis Servo Driver Alarm (A- to PC_3)",
+      "Joint Number": 3,
+      "Pin": "PC_3",
+      "Data Bit": 19,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Comment": "═══════════════════════════════════════════════════════════",
+      "Comment2": "  JOINT 4 - B AXIS (Rotary - around Y axis)",
+      "Comment3": "═══════════════════════════════════════════════════════════"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "B-Axis Step Generator (rotary, degrees)",
+      "ThreadFreq": 40000,
+      "Joint Number": 4,
+      "Enable Pin": "PC_8",
+      "Step Pin": "PC_6",
+      "Direction Pin": "PC_7",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "B-Axis Encoder Feedback",
+      "Joint Number": 4,
+      "Channel A Pin": "PC_9",
+      "Channel B Pin": "PC_10"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "B-Axis Position Error Detection (degrees)",
+      "Joint Number": 4,
+      "Steps Per Unit": 88.88888889,
+      "Counts Per Unit": 111.111111,
+      "Error Threshold": 2.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 4
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "B-Axis Limit Switch (optional for rotary)",
+      "Pin": "PB_0",
+      "Data Bit": 4,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "B-Axis Servo Driver Alarm (A- to PF_6)",
+      "Joint Number": 4,
+      "Pin": "PF_6",
+      "Data Bit": 20,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Comment": "═══════════════════════════════════════════════════════════",
+      "Comment2": "  JOINT 5 - C AXIS (Rotary - around Z axis / Spindle rotation)",
+      "Comment3": "═══════════════════════════════════════════════════════════"
+    },
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "C-Axis Step Generator (rotary, degrees)",
+      "ThreadFreq": 40000,
+      "Joint Number": 5,
+      "Enable Pin": "PD_14",
+      "Step Pin": "PD_12",
+      "Direction Pin": "PD_13",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "Encoder",
+      "Comment": "C-Axis Encoder Feedback",
+      "Joint Number": 5,
+      "Channel A Pin": "PC_11",
+      "Channel B Pin": "PC_12"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Position Monitor",
+      "Comment": "C-Axis Position Error Detection (degrees)",
+      "Joint Number": 5,
+      "Steps Per Unit": 88.88888889,
+      "Counts Per Unit": 111.111111,
+      "Error Threshold": 2.0,
+      "Debounce Cycles": 10,
+      "PV Slot": 5
+    },
+    {
+      "Thread": "Base",
+      "Type": "Endstop",
+      "Comment": "C-Axis Limit Switch (optional for rotary)",
+      "Pin": "PB_1",
+      "Data Bit": 5,
+      "Invert": true,
+      "Pullup": true
+    },
+    {
+      "Thread": "Base",
+      "Type": "Alarm",
+      "Comment": "C-Axis Servo Driver Alarm (A- to PF_7)",
+      "Joint Number": 5,
+      "Pin": "PF_7",
+      "Data Bit": 21,
+      "Invert": true,
+      "Pullup": true
+    },
+    
+    {
+      "Comment": "═══════════════════════════════════════════════════════════",
+      "Comment2": "  SYSTEM MODULES",
+      "Comment3": "═══════════════════════════════════════════════════════════"
+    },
+    {
+      "Thread": "Servo",
+      "Type": "Blink",
+      "Comment": "Status LED - Heartbeat (indicates firmware is running)",
+      "Pin": "PE_2",
+      "Frequency": 2
+    }
+  ]
+}

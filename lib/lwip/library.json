@@ -1,0 +1,33 @@
+{
+  "name": "lwip",
+  "version": "1.3.2",
+  "description": "Lightweight IP (LwIP) v1.3.2 TCP/IP stack",
+  "keywords": "tcp, ip, ethernet, lwip",
+  "authors": [
+    {
+      "name": "Swedish Institute of Computer Science"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yarrick/lwip-contrib"
+  },
+  "license": "BSD-3-Clause",
+  "build": {
+    "flags": [
+      "-I src/include",
+      "-I src/include/ipv4",
+      "-I src/include/lwip",
+      "-I port/STM32F4x7"
+    ],
+    "srcFilter": [
+      "+<src/core/*.c>",
+      "+<src/core/ipv4/*.c>",
+      "+<src/netif/etharp.c>",
+      "-<src/api/>",
+      "-<src/netif/ppp/>",
+      "-<src/core/ipv6/>",
+      "-<src/core/snmp/>"
+    ]
+  }
+}
