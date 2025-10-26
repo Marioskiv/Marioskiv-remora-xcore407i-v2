@@ -567,4 +567,4 @@ GPL v2 (same as Remora framework)
 ## Credits
 - **Remora framework**: Scott Alford (scotta)
 - **STM32F4 port**: Ben Jacobson
-- **XCore407I adaptation**: [Your name]
+- **XCore407I adaptation**: [Marioskiv]
