@@ -1,11 +1,15 @@
 
-# PlatformIO - Build artifacts (NOT in repo)
-.pio/
+# PlatformIO - Keep firmware builds for sharing
+.pio/*
+!.pio/build/
+.pio/build/*
+!.pio/build/*/firmware.bin
+!.pio/build/*/firmware.elf
 .pioenvs/
 .piodebug/
 libdeps/
 
-# Build output (NOT in repo)
+# Build output - Allow firmware files
 build/
 *.elf
 *.hex
@@ -14,9 +18,16 @@ build/
 *.d
 *.a
 *.log
+# Keep firmware files
+!firmware.bin
+!firmware.elf
+!*/firmware.bin
+!*/firmware.elf
 
-# VSCode settings (NOT in repo)
+# VSCode settings - Keep useful configs
 .vscode/
+!.vscode/tasks.json
+!.vscode/c_cpp_properties.json
 
 # OS files
 .DS_Store

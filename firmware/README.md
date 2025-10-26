@@ -2,8 +2,10 @@
 
 ## Ready-to-Flash Binaries
 
-### remora-xcore407i-v2.bin
-**Main firmware file** - Flash this to your XCORE407I board
+### firmware.bin
+**Main firmware file** - Flash this to your XCORE407I board  
+**Built:** October 26, 2025  
+**Size:** 285,556 bytes
 
 **Features:**
 - 6-axis closed-loop control
@@ -12,6 +14,8 @@
 - Endstop/limit switch support
 - Motor alarm monitoring
 - Direct PC connection (no router needed)
+- Enhanced ArduinoJson integration
+- Optimized STM32F4 HAL drivers
 
 ---
 
@@ -26,7 +30,7 @@
 #    - Release BOOT0 button
 
 # 2. Flash firmware:
-dfu-util -a 0 -s 0x08000000:leave -D remora-xcore407i-v2.bin
+dfu-util -a 0 -s 0x08000000:leave -D firmware.bin
 ```
 
 ### Method 2: PlatformIO
@@ -38,7 +42,7 @@ pio run -e xcore407i_eth_dfu -t upload
 
 ### Method 3: ST-Link
 
-Use STM32CubeProgrammer or st-flash to program `remora-xcore407i-v2.bin` to address `0x08000000`
+Use STM32CubeProgrammer or st-flash to program `firmware.bin` to address `0x08000000`
 
 ---
 
@@ -46,8 +50,8 @@ Use STM32CubeProgrammer or st-flash to program `remora-xcore407i-v2.bin` to addr
 
 | File | Purpose | Size |
 |------|---------|------|
-| `remora-xcore407i-v2.bin` | Flash firmware | ~150KB |
-| `remora-xcore407i-v2.elf` | Debug symbols (optional) | ~3MB |
+| `firmware.bin` | Flash firmware | 285KB |
+| `firmware.elf` | Debug symbols (optional) | 770KB |
 
 ---
 
