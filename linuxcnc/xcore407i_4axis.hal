@@ -1,0 +1,116 @@
+# ============================================================================
+# XCORE407I Remora Ethernet - 4-Axis CNC HAL Configuration
+# ============================================================================
+# Axes: X (joint 0), Y (joint 1), Z (joint 2), U (joint 3)
+# Endstops: remora.input.0 (X), .1 (Y), .2 (Z), .6 (U)
+# Alarms:   remora.input.3 (X), .4 (Y), .5 (Z), .9 (U)
+# Notes:
+# - Physical MCU pins are assigned in Remora firmware config (JSON), not here
+# - This HAL links logical Remora pins to LinuxCNC motion/PID
+# - Thread order per docs: read -> motion -> PID -> update-freq -> write
+# ============================================================================
+
+# Load Remora Ethernet component (velocity mode for closed-loop)
+loadrt remora-eth PRU_base_freq=120000 ctrl_type=v,v,v,v
+
+# Load PID controllers for closed-loop control
+loadrt pid names=pid.x,pid.y,pid.z,pid.u
+
+# Threads
+addf remora.read             servo-thread
+addf motion-command-handler  servo-thread
+addf motion-controller       servo-thread
+addf pid.x.do-pid-calcs      servo-thread
+addf pid.y.do-pid-calcs      servo-thread
+addf pid.z.do-pid-calcs      servo-thread
+addf pid.u.do-pid-calcs      servo-thread
+addf remora.update-freq      servo-thread
+addf remora.write            servo-thread
+
+# E-STOP loop
+net user-enable-out      iocontrol.0.user-enable-out      => remora.SPI-enable
+net user-request-enable  iocontrol.0.user-request-enable  => remora.SPI-reset
+net remora-status        remora.SPI-status                => iocontrol.0.emc-enable-in
+
+# ===================== Joint 0 (X) =====================
+setp remora.joint.0.scale      [JOINT_0]SCALE
+setp remora.joint.0.maxvel     [JOINT_0]STEPGEN_MAXVEL
+setp remora.joint.0.maxaccel   [JOINT_0]STEPGEN_MAXACCEL
+net j0enable   joint.0.amp-enable-out => remora.joint.0.enable pid.x.enable
+net j0pos-cmd  joint.0.motor-pos-cmd  => pid.x.command
+net j0pos-fb   remora.joint.0.pos-fb  => joint.0.motor-pos-fb pid.x.feedback
+net j0vel-cmd  pid.x.output           => remora.joint.0.vel-cmd
+setp pid.x.Pgain [JOINT_0]P
+setp pid.x.Igain [JOINT_0]I
+setp pid.x.Dgain [JOINT_0]D
+setp pid.x.FF0   [JOINT_0]FF0
+setp pid.x.FF1   [JOINT_0]FF1
+setp pid.x.FF2   [JOINT_0]FF2
+setp pid.x.bias  [JOINT_0]BIAS
+setp pid.x.deadband  [JOINT_0]DEADBAND
+setp pid.x.maxoutput [JOINT_0]MAX_OUTPUT
+net X-min  remora.input.0  => joint.0.home-sw-in joint.0.neg-lim-sw-in joint.0.pos-lim-sw-in
+net X-alarm remora.input.3 => halui.estop.activate
+
+# ===================== Joint 1 (Y) =====================
+setp remora.joint.1.scale      [JOINT_1]SCALE
+setp remora.joint.1.maxvel     [JOINT_1]STEPGEN_MAXVEL
+setp remora.joint.1.maxaccel   [JOINT_1]STEPGEN_MAXACCEL
+net j1enable   joint.1.amp-enable-out => remora.joint.1.enable pid.y.enable
+net j1pos-cmd  joint.1.motor-pos-cmd  => pid.y.command
+net j1pos-fb   remora.joint.1.pos-fb  => joint.1.motor-pos-fb pid.y.feedback
+net j1vel-cmd  pid.y.output           => remora.joint.1.vel-cmd
+setp pid.y.Pgain [JOINT_1]P
+setp pid.y.Igain [JOINT_1]I
+setp pid.y.Dgain [JOINT_1]D
+setp pid.y.FF0   [JOINT_1]FF0
+setp pid.y.FF1   [JOINT_1]FF1
+setp pid.y.FF2   [JOINT_1]FF2
+setp pid.y.bias  [JOINT_1]BIAS
+setp pid.y.deadband  [JOINT_1]DEADBAND
+setp pid.y.maxoutput [JOINT_1]MAX_OUTPUT
+net Y-min  remora.input.1  => joint.1.home-sw-in joint.1.neg-lim-sw-in joint.1.pos-lim-sw-in
+net Y-alarm remora.input.4 => halui.estop.activate
+
+# ===================== Joint 2 (Z) =====================
+setp remora.joint.2.scale      [JOINT_2]SCALE
+setp remora.joint.2.maxvel     [JOINT_2]STEPGEN_MAXVEL
+setp remora.joint.2.maxaccel   [JOINT_2]STEPGEN_MAXACCEL
+net j2enable   joint.2.amp-enable-out => remora.joint.2.enable pid.z.enable
+net j2pos-cmd  joint.2.motor-pos-cmd  => pid.z.command
+net j2pos-fb   remora.joint.2.pos-fb  => joint.2.motor-pos-fb pid.z.feedback
+net j2vel-cmd  pid.z.output           => remora.joint.2.vel-cmd
+setp pid.z.Pgain [JOINT_2]P
+setp pid.z.Igain [JOINT_2]I
+setp pid.z.Dgain [JOINT_2]D
+setp pid.z.FF0   [JOINT_2]FF0
+setp pid.z.FF1   [JOINT_2]FF1
+setp pid.z.FF2   [JOINT_2]FF2
+setp pid.z.bias  [JOINT_2]BIAS
+setp pid.z.deadband  [JOINT_2]DEADBAND
+setp pid.z.maxoutput [JOINT_2]MAX_OUTPUT
+net Z-min  remora.input.2  => joint.2.home-sw-in joint.2.neg-lim-sw-in joint.2.pos-lim-sw-in
+net Z-alarm remora.input.5 => halui.estop.activate
+
+# ===================== Joint 3 (U) =====================
+setp remora.joint.3.scale      [JOINT_3]SCALE
+setp remora.joint.3.maxvel     [JOINT_3]STEPGEN_MAXVEL
+setp remora.joint.3.maxaccel   [JOINT_3]STEPGEN_MAXACCEL
+net j3enable   joint.3.amp-enable-out => remora.joint.3.enable pid.u.enable
+net j3pos-cmd  joint.3.motor-pos-cmd  => pid.u.command
+net j3pos-fb   remora.joint.3.pos-fb  => joint.3.motor-pos-fb pid.u.feedback
+net j3vel-cmd  pid.u.output           => remora.joint.3.vel-cmd
+setp pid.u.Pgain [JOINT_3]P
+setp pid.u.Igain [JOINT_3]I
+setp pid.u.Dgain [JOINT_3]D
+setp pid.u.FF0   [JOINT_3]FF0
+setp pid.u.FF1   [JOINT_3]FF1
+setp pid.u.FF2   [JOINT_3]FF2
+setp pid.u.bias  [JOINT_3]BIAS
+setp pid.u.deadband  [JOINT_3]DEADBAND
+setp pid.u.maxoutput [JOINT_3]MAX_OUTPUT
+net U-min  remora.input.6  => joint.3.home-sw-in joint.3.neg-lim-sw-in joint.3.pos-lim-sw-in
+net U-alarm remora.input.9 => halui.estop.activate
+
+# ===================== Touch Probe =====================
+net probe-in remora.input.12 => motion.probe-input

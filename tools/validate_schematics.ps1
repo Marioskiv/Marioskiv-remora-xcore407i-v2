@@ -111,7 +111,7 @@ foreach ($f in $files) {
     }
     catch {
         $errCount++
-        Write-Err "[ERROR] $name: invalid JSON -> $($_.Exception.Message)"
+        Write-Err "[ERROR] ${name}: invalid JSON -> $($_.Exception.Message)"
         continue
     }
 

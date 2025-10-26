@@ -1,0 +1,24 @@
+# Post-GUI HAL file for XCORE407I Remora
+# This file is executed after the GUI is loaded
+
+# =============================================================================
+# HALUI CONNECTIONS (Optional - for GUI buttons)
+# =============================================================================
+
+# Connect PyVCP buttons if you create them
+# Example: net jog-x-pos <= pyvcp.jog-x-plus => halui.jog.0.plus
+# Example: net jog-x-neg <= pyvcp.jog-x-minus => halui.jog.0.minus
+
+# =============================================================================
+# STATUS INDICATORS
+# =============================================================================
+
+# Show encoder position on GUI (if you add displays)
+# Example: net x-encoder-pos <= remora.joint.0.encoder-count => pyvcp.x-encoder-display
+
+# Show alarm status
+# Example: net x-alarm-status <= remora.input.3 => pyvcp.x-alarm-led
+
+# =============================================================================
+# END OF POSTGUI HAL
+# =============================================================================
