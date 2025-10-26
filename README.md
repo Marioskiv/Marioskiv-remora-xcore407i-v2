@@ -1,3 +1,4 @@
+       (NOT TESTED YET)
 # XCore407I STM32F407IGT6 - Remora Firmware (Ethernet)
 
 **STM32F407IGT6 CNC Controller with Ethernet**
