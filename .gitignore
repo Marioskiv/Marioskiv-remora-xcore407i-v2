@@ -51,6 +51,7 @@ __pycache__/
 output.map
 *.lst
 *.sym
+compile_commands.json
 
 # Folders with problematic names
 "linuxcnc configuration exambles/"
