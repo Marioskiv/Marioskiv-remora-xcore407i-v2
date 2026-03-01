@@ -4,7 +4,7 @@
 
 ### firmware.bin
 **Main firmware file** - Flash this to your XCORE407I board  
-**Built:** October 26, 2025  
+**Built:** March 1, 2026  
 **Size:** 285,556 bytes
 
 **Features:**

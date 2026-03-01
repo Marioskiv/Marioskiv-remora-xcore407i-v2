@@ -1,0 +1,33 @@
+GNU GENERAL PUBLIC LICENSE
+Version 2, June 1991
+
+Copyright (C) 2025 Marioskiv
+Based on Remora Firmware by Scott Alford
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+---
+
+This firmware is based on the Remora project by Scott Alford:
+https://github.com/scottalford75/Remora
+
+Modifications for XCore407I board with Ethernet communication:
+- Native STM32F4 Ethernet implementation  
+- DP83848I PHY support (RMII interface)
+- LwIP TCP/IP stack integration
+- UDP-based communication protocol
+- Hardware-specific pin mappings for XCore407I
+
+Original Remora framework license applies to core components.

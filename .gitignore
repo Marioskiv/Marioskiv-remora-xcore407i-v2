@@ -47,6 +47,14 @@ __pycache__/
 *.old
 *~
 
+# Build artifacts
+output.map
+*.lst
+*.sym
+
+# Folders with problematic names
+"linuxcnc configuration exambles/"
+
 # Keep firmware binaries in repo (for easy download)
 !firmware/*.bin
 !firmware/*.elf

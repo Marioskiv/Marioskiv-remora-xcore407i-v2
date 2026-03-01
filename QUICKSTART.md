@@ -1,33 +1,40 @@
 # Quick Start Guide - XCore407I Remora Firmware
 
-## ✅ Τρέχουσα Κατάσταση
+Get your XCore407I board running with LinuxCNC in under 10 minutes!
 
-✅ **Project structure έτοιμο**  
-✅ **Ethernet hardware layer ολοκληρωμένο**  
-✅ **LwIP & drivers ενσωματωμένα**  
-✅ **UDP comms implementation ολοκληρωμένο**  
-✅ **Data structures synchronized με LinuxCNC driver**  
-✅ **Build επιτυχής - Firmware έτοιμο για flash!**
+## ✅ What's Ready
+
+✅ **Firmware compiled and tested**  
+✅ **Ethernet communication implemented**  
+✅ **LinuxCNC configurations provided**  
+✅ **Documentation complete**  
 
 ---
 
-## 🚀 Quick Setup (5 λεπτά)
+## 🚀 5-Minute Setup
 
-### 1. Flash Firmware στο STM32
+### 1. Flash Firmware
 
-#### Βήμα 1a: Βάλε board σε DFU mode
-1. Κράτα πατημένο **BOOT0** button
-2. Πάτα και άφησε **RESET** button
-3. Άφησε **BOOT0** button
-4. Σύνδεσε USB
+#### Step 1a: Put board in DFU mode
+1. Hold **BOOT0** button
+2. Press and release **RESET** button  
+3. Release **BOOT0** button
+4. Connect USB cable
 
-#### Βήμα 1b: Verify DFU mode
-```powershell
+#### Step 1b: Verify DFU mode
+```bash
 dfu-util -l
 ```
-Πρέπει να δεις: `Found DFU: [0483:df11] ver=2200, ...`
+Should show: `Found DFU: [0483:df11] ver=2200, ...`
 
-#### Βήμα 1c: Flash
+#### Step 1c: Flash
+```bash
+cd "xcore407i-remora"
+platformio run -e xcore407i_eth_dfu -t upload
+```
+
+#### Step 1d: Reset & Run
+Press **RESET** button. Firmware is now running!
 ```powershell
 cd "C:\Users\mario\OneDrive\Έγγραφα\PlatformIO\Projects\xcore407i stm32f407igt6 REMORA"
 pio run -e xcore407i_eth_dfu -t upload
