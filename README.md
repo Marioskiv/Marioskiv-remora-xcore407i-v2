@@ -120,9 +120,9 @@ The firmware uses predefined pin assignments optimized for the XCore407I board l
 
 **Ethernet (DP83848I PHY - RMII):**
 ```
-PA1  → REF_CLK    |  PC1  → MDC     |  PB11 → TX_EN
-PA2  → MDIO       |  PC4  → RXD0    |  PB12 → TXD0  
-PA7  → CRS_DV     |  PC5  → RXD1    |  PB13 → TXD1
+PA1  → REF_CLK    |  PC1  → MDC     |  PG11 → TX_EN
+PA2  → MDIO       |  PC4  → RXD0    |  PG13 → TXD0  
+PA7  → CRS_DV     |  PC5  → RXD1    |  PG14 → TXD1
 ```
 
 **Step/Direction Outputs (6-axis):**

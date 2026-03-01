@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2026-03-01
+
+### 🔧 Bug Fixes
+- **CRITICAL:** Fixed Ethernet pin mapping inconsistencies  
+- **Ethernet pins corrected:** Now consistently using PG11 (TX_EN), PG13 (TXD0), PG14 (TXD1)
+- **MCU schematic corrected:** Fixed duplicate PG12/PG14 ETH_TXD1 assignments  
+- **Code consistency:** All source files now match hardware layout
+- **Documentation updated:** README and schematics aligned with implementation
+
+### ✅ Verified Components
+- **stm32f4xx_hal_msp.c** - Ethernet GPIO configuration ✅
+- **xcore407i_eth_bsp.c** - Board support package ✅  
+- **ETHERNET DP83848I schematic.json** - PHY pin mapping ✅
+- **MCU schematic.json** - STM32F407IGT6 pin definitions ✅
+- **README.md** - Hardware documentation ✅
+
+### 📋 Pin Mapping Summary (XCore407I)
+```
+Receive:  PA1→REF_CLK | PA2→MDIO  | PA7→CRS_DV | PC1→MDC | PC4→RXD0 | PC5→RXD1  
+Transmit: PG11→TX_EN  | PG13→TXD0 | PG14→TXD1
+```
+
 ## [1.0.0] - 2026-03-01
 
 ### ✨ Features

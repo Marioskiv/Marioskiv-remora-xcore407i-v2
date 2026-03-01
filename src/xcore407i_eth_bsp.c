@@ -7,9 +7,9 @@
   *          - CRS_DV:   PA7  (Carrier sense / data valid)
   *          - RXD0:     PC4  (Receive data bit 0)
   *          - RXD1:     PC5  (Receive data bit 1)
-  *          - TX_EN:    PB11 (Transmit enable)
-  *          - TXD0:     PB12 (Transmit data bit 0)
-  *          - TXD1:     PB13 (Transmit data bit 1)
+  *          - TX_EN:    PG11 (Transmit enable)
+  *          - TXD0:     PG13 (Transmit data bit 0)
+  *          - TXD1:     PG14 (Transmit data bit 1)
   *          - MDC:      PC1  (Management clock)
   *          - MDIO:     PA2  (Management data I/O)
   *          - PHY_RST:  PG13 (PHY reset, active low)
@@ -29,10 +29,10 @@
     PC1  ------> ETH_MDC
     PC4  ------> ETH_RXD0
     PC5  ------> ETH_RXD1
-    PB11 ------> ETH_TX_EN
-    PB12 ------> ETH_TXD0
-    PB13 ------> ETH_TXD1
-    PG13 ------> PHY_RESET (GPIO output)
+    PG11 ------> ETH_TX_EN
+    PG13 ------> ETH_TXD0
+    PG14 ------> ETH_TXD1
+    PG13 ------> PHY_RESET (GPIO output - note: shared with TXD0, needs mux)
 */
 
 /* Private variables ---------------------------------------------------------*/

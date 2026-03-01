@@ -4,8 +4,13 @@
 
 ### firmware.bin
 **Main firmware file** - Flash this to your XCORE407I board  
-**Built:** March 1, 2026  
+**Built:** March 1, 2026 (v1.0.1 - Pin mapping fixes)  
 **Size:** 285,556 bytes
+
+**Latest Changes (v1.0.1):**
+- Fixed Ethernet pin mapping inconsistencies
+- All source files now consistent with XCore407I hardware  
+- Verified PG11 (TX_EN), PG13 (TXD0), PG14 (TXD1) pin assignments
 
 **Features:**
 - 6-axis closed-loop control
