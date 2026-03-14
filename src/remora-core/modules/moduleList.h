@@ -10,6 +10,7 @@
 #include "digitalPin/digitalPin.h"
 #include "encoder/encoder.h"
 #include "endstop/endstop.h"
+#include "hardwareEncoder/hardwareEncoder.h"
 //#include "motorPower/motorPower.h"
 #include "positionMonitor/positionMonitor.h"
 #include "resetPin/resetPin.h"

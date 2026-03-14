@@ -1,0 +1,175 @@
+{
+  "Board": "XCORE407I",
+  "Comment": "6-Axis Configuration using STM32 Hardware Encoder Timers with integrated driver fault reporting",
+  "Modules": [
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 0 - X Axis Step Generator",
+      "Joint Number": 0,
+      "Enable Pin": "PE_3",
+      "Step Pin": "PE_4",
+      "Direction Pin": "PE_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "HardwareEncoder",
+      "Comment": "Joint 0 - TIM1 CH1/CH2 encoder + fault",
+      "Joint Number": 0,
+      "Timer": "TIM1",
+      "Channel A Pin": "PE_9",
+      "Channel B Pin": "PE_11",
+      "Fault Pin": "PC_0",
+      "Fault Bit": 8,
+      "Fault Invert": true,
+      "Fault Pullup": true,
+      "Fault Latch": true,
+      "Fault Clear On Joint Disable": true,
+      "Fault Debounce Samples": 3
+    },
+
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 1 - Y Axis Step Generator",
+      "Joint Number": 1,
+      "Enable Pin": "PE_6",
+      "Step Pin": "PE_0",
+      "Direction Pin": "PE_1",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "HardwareEncoder",
+      "Comment": "Joint 1 - TIM4 CH1/CH2 encoder + fault",
+      "Joint Number": 1,
+      "Timer": "TIM4",
+      "Channel A Pin": "PB_6",
+      "Channel B Pin": "PB_7",
+      "Fault Pin": "PC_1",
+      "Fault Bit": 9,
+      "Fault Invert": true,
+      "Fault Pullup": true,
+      "Fault Latch": true,
+      "Fault Clear On Joint Disable": true,
+      "Fault Debounce Samples": 3
+    },
+
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 2 - Z Axis Step Generator",
+      "Joint Number": 2,
+      "Enable Pin": "PB_9",
+      "Step Pin": "PB_4",
+      "Direction Pin": "PB_5",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "HardwareEncoder",
+      "Comment": "Joint 2 - TIM5 CH1/CH2 encoder + fault",
+      "Joint Number": 2,
+      "Timer": "TIM5",
+      "Channel A Pin": "PA_0",
+      "Channel B Pin": "PA_1",
+      "Fault Pin": "PC_2",
+      "Fault Bit": 10,
+      "Fault Invert": true,
+      "Fault Pullup": true,
+      "Fault Latch": true,
+      "Fault Clear On Joint Disable": true,
+      "Fault Debounce Samples": 3
+    },
+
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 3 - A Axis Step Generator",
+      "Joint Number": 3,
+      "Enable Pin": "PB_8",
+      "Step Pin": "PD_12",
+      "Direction Pin": "PD_13",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "HardwareEncoder",
+      "Comment": "Joint 3 - TIM8 CH1/CH2 encoder + fault",
+      "Joint Number": 3,
+      "Timer": "TIM8",
+      "Channel A Pin": "PC_6",
+      "Channel B Pin": "PC_7",
+      "Fault Pin": "PC_3",
+      "Fault Bit": 11,
+      "Fault Invert": true,
+      "Fault Pullup": true,
+      "Fault Latch": true,
+      "Fault Clear On Joint Disable": true,
+      "Fault Debounce Samples": 3
+    },
+
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 4 - B Axis Step Generator",
+      "Joint Number": 4,
+      "Enable Pin": "PD_9",
+      "Step Pin": "PD_14",
+      "Direction Pin": "PD_15",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "HardwareEncoder",
+      "Comment": "Joint 4 - TIM9 CH1/CH2 encoder + fault",
+      "Joint Number": 4,
+      "Timer": "TIM9",
+      "Channel A Pin": "PE_5",
+      "Channel B Pin": "PE_6",
+      "Fault Pin": "PC_4",
+      "Fault Bit": 12,
+      "Fault Invert": true,
+      "Fault Pullup": true,
+      "Fault Latch": true,
+      "Fault Clear On Joint Disable": true,
+      "Fault Debounce Samples": 3
+    },
+
+    {
+      "Thread": "Base",
+      "Type": "Stepgen",
+      "Comment": "Joint 5 - C Axis Step Generator",
+      "Joint Number": 5,
+      "Enable Pin": "PD_10",
+      "Step Pin": "PG_2",
+      "Direction Pin": "PG_3",
+      "Step Bit": 22
+    },
+    {
+      "Thread": "Base",
+      "Type": "HardwareEncoder",
+      "Comment": "Joint 5 - TIM12 CH1/CH2 encoder + fault",
+      "Joint Number": 5,
+      "Timer": "TIM12",
+      "Channel A Pin": "PB_14",
+      "Channel B Pin": "PB_15",
+      "Fault Pin": "PC_5",
+      "Fault Bit": 13,
+      "Fault Invert": true,
+      "Fault Pullup": true,
+      "Fault Latch": true,
+      "Fault Clear On Joint Disable": true,
+      "Fault Debounce Samples": 3
+    },
+
+    {
+      "Thread": "Servo",
+      "Type": "Blink",
+      "Comment": "Status LED",
+      "Pin": "PE_2",
+      "Frequency": 2
+    }
+  ]
+}

@@ -34,6 +34,15 @@ This directory contains example configuration files for different machine setups
   - 6x Alarm modules
 - Recommended for: Complex machines, dual gantry systems, multi-spindle setups
 
+### 4. `config_6axis_hardware_encoder.json`
+**6-Axis Hardware Timer Encoder Setup (X, Y, Z, A, B, C)**
+- Uses STM32 timer encoder mode (quadrature X4) instead of software GPIO decoding
+- Includes:
+  - 6x Stepgen modules
+  - 6x HardwareEncoder modules with timer-per-joint mapping
+  - Integrated driver fault pin reporting per axis in `txData.inputs`
+- Recommended for: High-speed closed-loop systems that need deterministic encoder capture
+
 ## Module Types Explained
 
 ### Stepgen Module

@@ -13,6 +13,8 @@ std::shared_ptr<Module> ModuleFactory::createModule(const char* _tname,
             return Stepgen::create(config, instance);
         } else if (strcmp(_mtype, "Encoder") == 0) {
             return Encoder::create(config, instance);
+        } else if (strcmp(_mtype, "HardwareEncoder") == 0) {
+            return HardwareEncoder::create(config, instance);
         } else if (strcmp(_mtype, "Endstop") == 0) {
             return Endstop::create(config, instance);
         } else if (strcmp(_mtype, "Alarm") == 0) {

@@ -100,6 +100,24 @@ All configuration files are in JSON format and can be loaded via SD card or UART
   - Additional debug outputs
   - Development/testing configuration
 
+- **[examples/config_6axis_hardware_encoder.json](../examples/config_6axis_hardware_encoder.json)**
+  - 6-axis hardware timer encoder configuration
+  - Per-axis timer mapping via JSON
+  - Integrated fault reporting and fault hardening options
+
+- **[HARDWARE_ENCODER_MIGRATION.md](HARDWARE_ENCODER_MIGRATION.md)**
+  - Migration path from Encoder to HardwareEncoder
+  - Timer/pin rules and validation
+  - LinuxCNC integration notes
+
+- **[RELEASE_CHECKLIST_HARDWARE_ENCODER.md](RELEASE_CHECKLIST_HARDWARE_ENCODER.md)**
+  - Production release checklist for HardwareEncoder upgrade
+  - Build, safety, regression, and publication gates
+
+- **[COMMISSIONING_TEST_PLAN_6AXIS.md](COMMISSIONING_TEST_PLAN_6AXIS.md)**
+  - Step-by-step field commissioning tests for 6-axis hardware encoder systems
+  - Encoder integrity, overflow continuity, and fault-chain validation
+
 ### Configuration File Structure
 
 Each JSON config contains:

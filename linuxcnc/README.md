@@ -16,6 +16,7 @@ Complete LinuxCNC configuration files for 3-axis closed-loop CNC control with Re
 | `xcore407i_5axis.hal` | 5-axis HAL (adds U,V axes) |
 | `xcore407i_6axis.ini` | 6-axis INI (XYZUVW) |
 | `xcore407i_6axis.hal` | 6-axis HAL (adds U,V,W axes) |
+| `xcore407i_6axis_hardware_encoder.hal` | 6-axis HAL template for HardwareEncoder + fault chain |
 | `custom_postgui.hal` | Post-GUI connections (buttons, indicators) |
 | `README.md` | This file |
 
@@ -76,6 +77,7 @@ cp xcore407i_3axis.hal ~/linuxcnc/configs/xcore407i/
 # or
 # cp xcore407i_6axis.ini ~/linuxcnc/configs/xcore407i/
 # cp xcore407i_6axis.hal ~/linuxcnc/configs/xcore407i/
+# cp xcore407i_6axis_hardware_encoder.hal ~/linuxcnc/configs/xcore407i/
 cp custom_postgui.hal ~/linuxcnc/configs/xcore407i/
 
 # Create var file
@@ -175,6 +177,19 @@ SCALE = (200 steps/rev × 10 micro) / 5mm = 400 steps/mm
 ENCODER_SCALE = [your_encoder_CPR] / [your_pitch_mm]
 SCALE = ([steps_per_rev] × [microstepping]) / [your_pitch_mm]
 ```
+
+### HardwareEncoder Integration
+
+For firmware configurations using `Type: "HardwareEncoder"` modules:
+
+- Use `xcore407i_6axis_hardware_encoder.hal` as the HAL starting point
+- Ensure firmware JSON fault bits map consistently to `remora.input.8..13`
+- Fault chain in template drives `halui.estop.activate`
+
+See migration and JSON details in:
+
+- `docs/HARDWARE_ENCODER_MIGRATION.md`
+- `examples/config_6axis_hardware_encoder.json`
 
 ---
 
